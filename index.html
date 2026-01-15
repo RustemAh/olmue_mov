@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Banner móvil — Especial Olmué 2026</title>
+
+  <style>
+    *{ box-sizing:border-box; }
+    html, body{ margin:0; padding:0; background:transparent; }
+
+    /* Contenedor cuadrado: mantiene 1:1, máximo 400px (tu 400x400) */
+    .olmue-banner{
+      position:relative;
+      width:100%;
+      max-width:400px;      /* “400” como tamaño objetivo */
+      aspect-ratio: 1 / 1;  /* 400x400 */
+      margin:0 auto;
+      border-radius:14px;
+      overflow:hidden;
+    }
+
+    /* Imagen cubre todo el cuadrado */
+    .olmue-banner__img{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* CTA encima (abajo, centrado) */
+    .olmue-banner__cta{
+      position:absolute;
+      left:12px;
+      right:12px;
+      bottom:12px;
+      z-index:2;
+      padding:12px;
+      border-radius:12px;
+      background:rgba(0,0,0,.45);
+      backdrop-filter: blur(2px);
+      text-align:center;
+    }
+
+    .olmue-banner__btn{
+      display:block;
+      width:100%;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-weight:800;
+      font-size:16px;
+      padding:12px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      background:#ffcc33;
+      color:#0b0b0b;
+      box-shadow:0 6px 18px rgba(0,0,0,.25);
+    }
+
+    .olmue-banner__btn:focus{
+      outline:3px solid rgba(255,204,51,.7);
+      outline-offset:3px;
+    }
+
+    .olmue-banner__hint{
+      margin-top:8px;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      font-size:12px;
+      color:rgba(255,255,255,.92);
+    }
+
+    /* En pantallas muy pequeñas, baja un poco el tamaño de tipografía/padding */
+    @media (max-width: 360px){
+      .olmue-banner__btn{ font-size:15px; padding:11px 12px; }
+      .olmue-banner__cta{ padding:10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="olmue-banner" role="region" aria-label="Especial Festival del Huaso de Olmué 2026">
+    <img
+      class="olmue-banner__img"
+      src="https://www.epicentrochile.com/wp-content/uploads/2026/01/banner-especial_olmue_MOV.jpg"
+      alt="Festival del Huaso de Olmué 2026 — Cobertura especial"
+      loading="lazy"
+    />
+
+    <div class="olmue-banner__cta">
+      <a
+        class="olmue-banner__btn"
+        href="https://rustemah.github.io/olmue_especial/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ingresar al especial de prensa del Festival del Huaso de Olmué 2026"
+      >
+        Ingresar al especial de prensa
+      </a>
+      <div class="olmue-banner__hint">Festival del Huaso de Olmué 2026</div>
+    </div>
+  </div>
+</body>
+</html>
